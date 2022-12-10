@@ -1,0 +1,46 @@
+# URL to access the openWB logs
+openwb_log_url: http://OpenWb/openWB/web/logging/data/ladelog/
+
+# list of RFIDs that should be considered for creating the invoice
+# if empty, all RFIDs will be considered
+rfids: []
+
+# price per kWh
+price_kwh: 0.2465
+
+invoice:
+  # only Germany supported at the moment
+  country: Germany
+  sender:
+    name: Max Mustermann
+    street: Example Street 1
+    zip: 12345
+    city: Example City
+    vat_id: 123/123/12345
+    iban: DE12 1234 1234 1234 1234 12
+
+  receiver:
+    name: Max Mustermann
+    street: Example Street 1
+    zip: 12345
+    city: Example City
+
+email:
+  sender: sender@example.com
+  password: password
+  receiver: receiver@example.com
+  subject: "Invoice for charging session"
+  body: |
+    Hello,
+
+    please find attached the invoice for your charging session.
+
+    Best regards,
+    Your Charging Station
+  smtp_server: smtp.example.com
+  smtp_port: 465
+  # if the invoice number should be included in the subject
+  include_invoice_number: true
+
+# if the invoice and the log file should be deleted after sending the email
+clean_up: true
