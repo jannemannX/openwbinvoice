@@ -3,7 +3,7 @@
 This is a simple invoice generator for openWB. It generates a PDF invoice for the current month and then sends it to the email address configured in the config file.
 
 ## Pre-requisites
-- Python 3
+- [Python 3](https://www.python.org/downloads/)
 - Pip modules: `pip install -r requirements.txt`
 - openWB running on the same local network as the invoice generator
 
