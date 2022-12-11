@@ -1,6 +1,6 @@
 # openWB invoice
 
-This is a simple invoice generator for openWB. It generates a PDF invoice for the current month and then sends it to the email address configured in the config file.
+This is a simple invoice generator for [openWB](https://openwb.de/main/). It generates a PDF invoice for the current month and then sends it to the email address configured in the config file.
 
 ## Pre-requisites
 - [Python 3](https://www.python.org/downloads/)
