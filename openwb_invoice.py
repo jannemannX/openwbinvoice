@@ -35,10 +35,14 @@ def main():
     invoice_path = create_invoice(
         log_cleaned, config.get('price_kwh'), config.get('invoice'))
 
-    send_invoice(invoice_path, config.get('email'))
+    if config.get('email').get('enabled'):
+        send_invoice(invoice_path, config.get('email'))
 
-    if config.get('clean_up'):
-        clean_up(log_path, invoice_path)
+    if config.get('clean_up_log'):
+        os.remove(log_path)
+
+    if config.get('clean_up_invoice'):
+        os.remove(invoice_path)
 
 
 def download_csv(openwb_url):
@@ -199,11 +203,6 @@ def send_invoice(invoice_path, email):
         server.sendmail(
             email.get('sender'), email.get('receiver'), text
         )
-
-
-def clean_up(invoice_path, log_path):
-    os.remove(invoice_path)
-    os.remove(log_path)
 
 
 if __name__ == '__main__':

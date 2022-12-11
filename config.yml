@@ -26,6 +26,9 @@ invoice:
     city: Example City
 
 email:
+  # if the email should be sent or only the invoice created
+  # remember to set clean_up_invoice to false if email is disabled
+  enabled: true
   sender: sender@example.com
   password: password
   receiver: receiver@example.com
@@ -43,4 +46,5 @@ email:
   include_invoice_number: true
 
 # if the invoice and the log file should be deleted after sending the email
-clean_up: true
+clean_up_log: false
+clean_up_invoice: false
