@@ -9,7 +9,7 @@ This is a simple invoice generator for [openWB](https://openwb.de/main/). It gen
 - An email account to send the invoice from, the account must allow login over password
 
 ## Usage
-- Edit the config file `config.yml` to match your needs
+- Edit the config file `config.yml` to match your needs OR create a custom config and give it as an argument e.g. `python3 openwb_invoice.py custom.yml`
 - Run `python3 openwb_invoice.py`
 - You might want to run it as a cron job, e.g. at the third day of each month to generate the invoice for the previous month
     - `crontab -e`
