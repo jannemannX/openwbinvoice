@@ -122,12 +122,12 @@ def create_invoice(log, price_kwh, invoice):
         tbody += '</tr>'
 
     html = '''
-        <table width='90%'>
+        <table border='1' cellspacing='0' cellpadding='5' width='100%'>
         <thead>
             <tr>
             <th width='20%'>Startzeit</th>
             <th width='20%'>Endzeit</th>
-            <th width='20%'>Kwh</th>
+            <th width='20%'>kWh</th>
             <th width='20%'>Ladedauer</th>
             <th width='20%'>Ladepunkt</th>
             </tr>
@@ -164,7 +164,9 @@ def send_invoice(invoice_path, email):
     message = MIMEMultipart()
     message['From'] = email.get('sender')
     message['To'] = email.get('receiver')
-    message['Subject'] = email.get('subject')
+    subject = email.get('subject') + ' Rechnungsnr: ' + datetime.now().strftime(
+        '%Y%m%d') if email.get('include_invoice_number') else email.get('subject')
+    message['Subject'] = subject
     message["Bcc"] = email.get('receiver')  # Recommended for mass emails
 
     # add body to email
