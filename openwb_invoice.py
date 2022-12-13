@@ -49,13 +49,12 @@ def download_csv(openwb_url):
     today = date.today()
     prev_month = today - relativedelta(months=1)
     csvname = prev_month.strftime('%Y%m') + '.csv'
-    path = 'logs/' + csvname
 
     # download log CSV and save to /logs
     urllib.request.urlretrieve(
-        openwb_url + csvname, path)
+        openwb_url + csvname, csvname)
 
-    return path
+    return csvname
 
 
 def open_csv(csv_path):
