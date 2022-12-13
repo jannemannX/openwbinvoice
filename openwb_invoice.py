@@ -6,7 +6,7 @@ import ssl
 import urllib.request
 import os
 from fpdf import FPDF, HTMLMixin
-from datetime import datetime
+from datetime import date, datetime
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -26,7 +26,7 @@ def main():
     with open(config_file, 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
-    log_path = download_csv(config.get('openwb_url'))
+    log_path = download_csv(config.get('openwb_log_url'))
 
     log = open_csv(log_path)
 
@@ -46,9 +46,9 @@ def main():
 
 
 def download_csv(openwb_url):
-    date = datetime.now()
-    date2 = date - relativedelta(months=1)
-    csvname = date2.strftime('%Y%m') + '.csv'
+    today = date.today()
+    prev_month = today - relativedelta(months=1)
+    csvname = prev_month.strftime('%Y%m') + '.csv'
     path = 'logs/' + csvname
 
     # download log CSV and save to /logs
