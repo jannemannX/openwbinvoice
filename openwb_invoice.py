@@ -77,7 +77,7 @@ def clean_log(log, rfids):
     # clean out irrelevant RFIDs you don't want to be invoiced
     log_cleaned = []
     for row in log:
-        if len(row) > RFID and (row[RFID] in rfids or rfids.len() == 0):
+        if len(row) > RFID and (row[RFID] in rfids or len(rfids) == 0):
             new_row = [row[START], row[END],
                        row[KWH], row[DAUER], row[LADEPUNKT]]
             log_cleaned.append(new_row)
