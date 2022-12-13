@@ -1,7 +1,7 @@
 # URL to access the openWB logs
 openwb_log_url: http://OpenWb/openWB/web/logging/data/ladelog/
 
-# list of RFIDs that should be considered for creating the invoice
+# list of RFIDs (Strings e.g. "12345678") that should be considered for creating the invoice
 # if empty, all RFIDs will be considered
 rfids: []
 
