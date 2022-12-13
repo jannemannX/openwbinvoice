@@ -13,4 +13,4 @@ This is a simple invoice generator for [openWB](https://openwb.de/main/). It gen
 - Run `python3 openwb_invoice.py`
 - You might want to run it as a cron job, e.g. at the third day of each month to generate the invoice for the previous month
     - `crontab -e`
-    - `0 0 3 * * python3 /path/to/openwb_invoice.py`
+    - `0 0 3 * * cd /path/to/openwbinvoice && python3 openwb_invoice.py`
