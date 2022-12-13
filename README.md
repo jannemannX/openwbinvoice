@@ -4,7 +4,7 @@ This is a simple invoice generator for [openWB](https://openwb.de/main/). It gen
 
 ## Requirements
 - [Python 3](https://www.python.org/downloads/)
-- Pip modules: `pip install -r requirements.txt`
+- Pip modules: `pip3 install -r requirements.txt`
 - openWB running on the same local network as the invoice generator
 - An email account to send the invoice from, the account must allow login over password
 
